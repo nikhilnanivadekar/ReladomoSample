@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="reladomo">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib/reladomo" />
+      <root url="file://$PROJECT_DIR$/lib/test" />
+      <root url="file://$PROJECT_DIR$/lib/thirdparty" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/reladomo/src/reladomo-16.1.2-sources.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib/reladomo" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/test" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/thirdparty" recursive="false" />
+  </library>
+</component>

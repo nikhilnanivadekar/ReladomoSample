@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional">
+    <PackageName>example.domain</PackageName>
+    <ClassName>Person</ClassName>
+    <DefaultTable>PERSON</DefaultTable>
+
+    <Attribute name="personId" javaType="int" columnName="PERSON_ID" primaryKey="true"/>
+    <Attribute name="firstName" javaType="String" columnName="FIRST_NAME" nullable="false"/>
+    <Attribute name="lastName" javaType="String" columnName="LAST_NAME" nullable="false"/>
+    <Attribute name="city" javaType="String" columnName="CITY"/>
+</MithraObject>

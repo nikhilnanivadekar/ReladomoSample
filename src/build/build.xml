@@ -1,0 +1,131 @@
+<project name="reladomoSample" default="clean-compile-all" basedir="../..">
+
+    <property name="main.src.dir" value="${basedir}/src/main/java"/>
+    <property name="test.src.dir" value="${basedir}/src/test/java"/>
+    <property name="main.classes.dir" location="${basedir}/target/classes"/>
+    <property name="test.classes.dir" location="${basedir}/target/testclasses"/>
+    <property name="generated.src.dir" location="${basedir}/target/java/generatedsrc"/>
+    <property name="generated.ddl.dir" location="${basedir}/target/database/generated-ddl"/>
+    <property name="generated.xml.dir" location="${basedir}/target/database/generated-xml"/>
+    <property name="generated.graph.dir" location="${basedir}/target/database/generated-graph"/>
+    <property name="xml.dir" location="${basedir}/src/main/reladomoxml"/>
+    <property name="lib.dir" location="${basedir}/lib"/>
+    <property name="build.lib.dir" location="${basedir}/src/build/lib"/>
+    <property name="reladomo.lib.dir" location="${lib.dir}/reladomo"/>
+    <property name="test.lib.dir" location="${lib.dir}/test"/>
+    <property name="generateConcreteClasses" value="true"/>
+
+    <target name="all" depends="compile-all"/>
+
+    <target name="clean-compile-all" depends="clean, all"/>
+
+    <target name="init" depends="copy-libs">
+        <tstamp/>
+        <mkdir dir="${main.classes.dir}"/>
+        <mkdir dir="${test.classes.dir}"/>
+        <mkdir dir="${generated.src.dir}"/>
+        <mkdir dir="${generated.ddl.dir}"/>
+        <mkdir dir="${generated.xml.dir}"/>
+        <mkdir dir="${generated.graph.dir}"/>
+    </target>
+
+    <path id="reladomo.buildtime.classpath">
+        <fileset dir="${reladomo.lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${lib.dir}">
+            <include name="test/*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="reladomo.testtime.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="test/*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="reladomogen.classpath">
+        <fileset dir="${build.lib.dir}">
+            <include name="*.jar"/>
+            <include name="reladomo/*.jar"/>
+        </fileset>
+        <fileset dir="${reladomo.lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="generate-reladomo-classes" depends="init">
+        <taskdef
+                name="reladomo-gen"
+                classname="com.gs.fw.common.mithra.generator.MithraGenerator"
+                loaderref="reladomoGenerator">
+            <classpath refid="reladomogen.classpath"/>
+        </taskdef>
+
+        <reladomo-gen
+                xml="${xml.dir}/ReladomoTestAppClassList.xml"
+                generatedDir="${generated.src.dir}"
+                nonGeneratedDir="${main.src.dir}"
+                generateConcreteClasses="${generateConcreteClasses}"
+                generateGscListMethod="true">
+        </reladomo-gen>
+    </target>
+
+    <target name="generate-reladomo-ddl">
+        <taskdef name="reladomo-gen-ddl"
+                 classname="com.gs.fw.common.mithra.generator.dbgenerator.MithraDbDefinitionGenerator">
+            <classpath refid="reladomogen.classpath"/>
+        </taskdef>
+        <reladomo-gen-ddl
+                xml="${xml.dir}/ReladomoTestAppClassList.xml"
+                generatedDir="${generated.ddl.dir}"
+                databaseType="udb82"/>
+    </target>
+
+    <target name="generate-reladomo-graphml">
+        <taskdef name="reladomo-gen-graph"
+                 classname="com.gs.fw.common.mithra.generator.MithraGraphGenerator">
+            <classpath refid="reladomogen.classpath"/>
+        </taskdef>
+        <reladomo-gen-graph
+                xml="${xml.dir}/ReladomoTestAppClassList.xml"
+                showattributes="all"
+                outputfile="${generated.graph.dir}/model.graphml"/>
+    </target>
+
+    <target name="copy-libs">
+        <copy todir="${basedir}/lib" quiet="true" failonerror="false">
+            <fileset dir="${basedir}/../lib"/>
+        </copy>
+    </target>
+
+    <target name="compile-all" depends="generate-reladomo-classes">
+        <javac destdir="${main.classes.dir}"
+               debug="true"
+               source="1.8"
+               target="1.8"
+               includeAntRuntime="true">
+            <src path="${main.src.dir}"/>
+            <src path="${generated.src.dir}"/>
+            <classpath>
+                <path refid="reladomo.buildtime.classpath"/>
+            </classpath>
+        </javac>
+        <javac destdir="${test.src.dir}"
+               debug="true"
+               source="1.8"
+               target="1.8"
+               includeAntRuntime="true">
+            <src path="${test.src.dir}"/>
+            <classpath>
+                <pathelement location="${main.classes.dir}"/>
+                <path refid="reladomo.buildtime.classpath"/>
+                <path refid="reladomo.testtime.classpath"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="clean">
+        <delete quiet="true" dir="${basedir}/target"/>
+    </target>
+</project>
