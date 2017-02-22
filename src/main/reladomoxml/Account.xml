@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+
+    <PackageName>example.domain</PackageName>
+    <ClassName>Account</ClassName>
+    <DefaultTable>ACCOUNT</DefaultTable>
+
+    <AsOfAttribute name="processingDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="true"
+                   fromColumnName="IN_Z"
+                   toColumnName="OUT_Z"/>
+
+    <Attribute name="acctId" javaType="int" columnName="ACCT_ID" primaryKey="true"
+               primaryKeyGeneratorStrategy="SimulatedSequence">
+        <SimulatedSequence sequenceName="Account"
+                           sequenceObjectFactoryName="sample.util.ObjectSequenceObjectFactory"
+                           hasSourceAttribute="false"
+                           batchSize="10"
+                           initialValue="1"
+                           incrementSize="1"/>
+    </Attribute>
+
+    <Attribute name="acctNum" javaType="String" columnName="ACCT_NUM" maxLength="9" nullable="false"/>
+    <Attribute name="firstName" javaType="String" columnName="FIRST_NAME" maxLength="255" nullable="false"/>
+    <Attribute name="lastName" javaType="String" columnName="LAST_NAME" maxLength="255" nullable="false"/>
+    <Attribute name="city" javaType="String" columnName="CITY" maxLength="24"/>
+</MithraObject>

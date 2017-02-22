@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+
+    <PackageName>example.domain</PackageName>
+    <ClassName>Product</ClassName>
+    <DefaultTable>PRODUCT</DefaultTable>
+
+    <AsOfAttribute name="processingDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="true"
+                   fromColumnName="IN_Z"
+                   toColumnName="OUT_Z"/>
+
+    <Attribute name="productId" javaType="int" columnName="PRODUCT_ID" primaryKey="true"
+               primaryKeyGeneratorStrategy="SimulatedSequence">
+        <SimulatedSequence sequenceName="Product"
+                           sequenceObjectFactoryName="sample.util.ObjectSequenceObjectFactory"
+                           hasSourceAttribute="false"
+                           batchSize="10"
+                           initialValue="1"
+                           incrementSize="1"/>
+    </Attribute>
+
+    <Attribute name="cusip" javaType="String" columnName="CUSIP" maxLength="25" nullable="false"/>
+    <Attribute name="productTicker" javaType="String" columnName="PRODUCT_TICKER" maxLength="25" nullable="false"/>
+    <Attribute name="productName" javaType="String" columnName="PRODUCT_NAME" maxLength="255" nullable="false"/>
+
+    <Relationship name="synonyms" relatedObject="ProductSynonym" cardinality="one-to-many">
+        this.productId = ProductSynonym.productId
+    </Relationship>
+
+    <Relationship name="cusOrFooSynonyms" relatedObject="ProductSynonym" cardinality="one-to-one">
+        this.productId = ProductSynonym.productId and ProductSynonym.synonymType in ("CUS", "FOO")
+    </Relationship>
+
+    <Relationship name="synonymByType" relatedObject="ProductSynonym" cardinality="one-to-one"
+                  parameters="String synonymType">
+        this.productId = ProductSynonym.productId and ProductSynonym.synonymType = {synonymType}
+    </Relationship>
+
+    <Relationship name="synonymByTypes" relatedObject="ProductSynonym" cardinality="one-to-many"
+                  parameters="Set&lt;String&gt; synonymTypes">
+        this.productId = ProductSynonym.productId and ProductSynonym.synonymType in {synonymTypes}
+    </Relationship>
+
+    <Relationship name="cusipSynonym" relatedObject="ProductSynonym" cardinality="one-to-one">
+        this.productId = ProductSynonym.productId and ProductSynonym.synonymType = "CUS"
+    </Relationship>
+
+</MithraObject>

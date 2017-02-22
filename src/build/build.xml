@@ -35,6 +35,7 @@
         </fileset>
         <fileset dir="${lib.dir}">
             <include name="test/*.jar"/>
+            <include name="thirdparty/*.jar"/>
         </fileset>
     </path>
 

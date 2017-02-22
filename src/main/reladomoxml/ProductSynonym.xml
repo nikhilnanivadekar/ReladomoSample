@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+
+    <PackageName>example.domain</PackageName>
+    <ClassName>ProductSynonym</ClassName>
+    <DefaultTable>PRODUCT_SYNONYM</DefaultTable>
+
+    <Attribute name="productId" javaType="int" columnName="PRODUCT_ID" primaryKey="true"/>
+    <Attribute name="synonymType" javaType="String" columnName="SYNONYM_TYPE" primaryKey="true"/>
+    <Attribute name="synonymValue" javaType="String" columnName="SYNONYM_VAL"/>
+</MithraObject>

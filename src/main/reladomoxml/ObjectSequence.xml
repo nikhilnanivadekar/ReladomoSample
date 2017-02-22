@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+
+    <PackageName>example.domain</PackageName>
+    <ClassName>ObjectSequence</ClassName>
+    <DefaultTable>OBJECT_SEQUENCE</DefaultTable>
+
+    <Attribute name="simulatedSequenceName" javaType="String" columnName="SEQUENCE_NAME" primaryKey="true"
+               maxLength="64"/>
+    <Attribute name="nextValue" javaType="long" columnName="NEXT_VALUE"/>
+
+</MithraObject>

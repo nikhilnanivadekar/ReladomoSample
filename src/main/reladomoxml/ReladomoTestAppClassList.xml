@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
 <Mithra>
-    <MithraObjectResource name="Person"/>
+    <MithraObjectResource name="Account"/>
+    <MithraObjectResource name="ObjectSequence"/>
+    <MithraObjectResource name="Product"/>
+    <MithraObjectResource name="ProductSynonym"/>
+    <MithraObjectResource name="Trade"/>
 </Mithra>

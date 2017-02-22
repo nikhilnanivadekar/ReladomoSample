@@ -1,8 +1,8 @@
 package example.domain;
 
-public class Person extends PersonAbstract
+public class ProductSynonym extends ProductSynonymAbstract
 {
-    public Person()
+    public ProductSynonym()
     {
         super();
         // You must not modify this constructor. Mithra calls this internally.

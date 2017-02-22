@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+
+    <PackageName>example.domain</PackageName>
+    <ClassName>Trade</ClassName>
+    <DefaultTable>TRADE</DefaultTable>
+    <SourceAttribute name="exchange" javaType="String"/>
+
+    <AsOfAttribute name="businessDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="false"
+                   fromColumnName="FROM_Z"
+                   toColumnName="THRU_Z"/>
+    <AsOfAttribute name="processingDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="true"
+                   fromColumnName="IN_Z"
+                   toColumnName="OUT_Z"/>
+
+    <Attribute name="tradeId" javaType="int" columnName="TRADE_ID" primaryKey="true"/>
+    <Attribute name="tradeRef" javaType="String" maxLength="20" columnName="TRADE_REF" nullable="false"/>
+    <Attribute name="orderType" javaType="String" columnName="ORDER_TYPE" maxLength="4" nullable="false"/>
+    <Attribute name="acctId" javaType="int" columnName="ACCT_ID" nullable="false"/>
+    <Attribute name="productId" javaType="int" columnName="PRODUCT_ID" nullable="false"/>
+    <Attribute name="unitPrice" javaType="double" columnName="UNIT_PRICE" nullable="false"/>
+    <Attribute name="quantity" javaType="double" columnName="QUANTITY" nullable="false"/>
+    <Attribute name="tradeCurrency" javaType="String" columnName="TRADE_CURRENCY" maxLength="3" nullable="false"/>
+
+    <Relationship name="tradesByTradeRef" relatedObject="Trade" cardinality="one-to-many"
+                  parameters="Timestamp busDate, Timestamp procDate">
+        this.tradeRef = Trade.tradeRef and
+        Trade.businessDate = {busDate} and
+        Trade.processingDate = {procDate} and
+        this.orderType = Trade.orderType
+    </Relationship>
+
+    <Relationship name="product" relatedObject="Product" cardinality="many-to-one"
+                  reverseRelationshipName="tradesByProduct">
+        this.productId = Product.productId
+    </Relationship>
+
+    <Relationship name="account" relatedObject="Account" cardinality="many-to-one"
+                  reverseRelationshipName="tradesByAccount">
+        this.acctId = Account.acctId
+    </Relationship>
+
+</MithraObject>
