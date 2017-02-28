@@ -1,4 +1,4 @@
-<project name="reladomoSample" default="clean-compile-all" basedir="../..">
+<project name="reladomoSample" default="clean-compile-all" basedir="..">
 
     <property name="main.src.dir" value="${basedir}/src/main/java"/>
     <property name="test.src.dir" value="${basedir}/src/test/java"/>
@@ -10,7 +10,7 @@
     <property name="generated.graph.dir" location="${basedir}/target/database/generated-graph"/>
     <property name="xml.dir" location="${basedir}/src/main/reladomoxml"/>
     <property name="lib.dir" location="${basedir}/lib"/>
-    <property name="build.lib.dir" location="${basedir}/src/build/lib"/>
+    <property name="build.lib.dir" location="${basedir}/build/lib"/>
     <property name="reladomo.lib.dir" location="${lib.dir}/reladomo"/>
     <property name="test.lib.dir" location="${lib.dir}/test"/>
     <property name="generateConcreteClasses" value="true"/>
