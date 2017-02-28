@@ -1,14 +1,14 @@
 <project name="reladomoSample" default="clean-compile-all" basedir="..">
 
-    <property name="main.src.dir" value="${basedir}/src/main/java"/>
-    <property name="test.src.dir" value="${basedir}/src/test/java"/>
+    <property name="complex.domain.main.src.dir" value="${basedir}/complex-domain/main/java"/>
+    <property name="complex.domain.test.src.dir" value="${basedir}/complex-domain/test/java"/>
     <property name="main.classes.dir" location="${basedir}/target/classes"/>
     <property name="test.classes.dir" location="${basedir}/target/testclasses"/>
     <property name="generated.src.dir" location="${basedir}/target/java/generatedsrc"/>
     <property name="generated.ddl.dir" location="${basedir}/target/database/generated-ddl"/>
     <property name="generated.xml.dir" location="${basedir}/target/database/generated-xml"/>
     <property name="generated.graph.dir" location="${basedir}/target/database/generated-graph"/>
-    <property name="xml.dir" location="${basedir}/src/main/reladomoxml"/>
+    <property name="complex.domain.xml.dir" location="${basedir}/complex-domain/main/reladomoxml"/>
     <property name="lib.dir" location="${basedir}/lib"/>
     <property name="build.lib.dir" location="${basedir}/build/lib"/>
     <property name="reladomo.lib.dir" location="${lib.dir}/reladomo"/>
@@ -64,9 +64,9 @@
         </taskdef>
 
         <reladomo-gen
-                xml="${xml.dir}/ReladomoTestAppClassList.xml"
+                xml="${complex.domain.xml.dir}/ReladomoTestAppClassList.xml"
                 generatedDir="${generated.src.dir}"
-                nonGeneratedDir="${main.src.dir}"
+                nonGeneratedDir="${complex.domain.main.src.dir}"
                 generateConcreteClasses="${generateConcreteClasses}"
                 generateGscListMethod="true">
         </reladomo-gen>
@@ -78,7 +78,7 @@
             <classpath refid="reladomogen.classpath"/>
         </taskdef>
         <reladomo-gen-ddl
-                xml="${xml.dir}/ReladomoTestAppClassList.xml"
+                xml="${complex.domain.xml.dir}/ReladomoTestAppClassList.xml"
                 generatedDir="${generated.ddl.dir}"
                 databaseType="udb82"/>
     </target>
@@ -89,7 +89,7 @@
             <classpath refid="reladomogen.classpath"/>
         </taskdef>
         <reladomo-gen-graph
-                xml="${xml.dir}/ReladomoTestAppClassList.xml"
+                xml="${complex.domain.xml.dir}/ReladomoTestAppClassList.xml"
                 showattributes="all"
                 outputfile="${generated.graph.dir}/model.graphml"/>
     </target>
@@ -106,18 +106,18 @@
                source="1.8"
                target="1.8"
                includeAntRuntime="true">
-            <src path="${main.src.dir}"/>
+            <src path="${complex.domain.main.src.dir}"/>
             <src path="${generated.src.dir}"/>
             <classpath>
                 <path refid="reladomo.buildtime.classpath"/>
             </classpath>
         </javac>
-        <javac destdir="${test.src.dir}"
+        <javac destdir="${complex.domain.test.src.dir}"
                debug="true"
                source="1.8"
                target="1.8"
                includeAntRuntime="true">
-            <src path="${test.src.dir}"/>
+            <src path="${complex.domain.test.src.dir}"/>
             <classpath>
                 <pathelement location="${main.classes.dir}"/>
                 <path refid="reladomo.buildtime.classpath"/>
