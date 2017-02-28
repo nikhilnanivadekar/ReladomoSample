@@ -55,40 +55,40 @@
         </fileset>
     </path>
 
-    <target name="generate-reladomo-classes" depends="init">
+    <target name="generate-reladomo-complex-domain-classes" depends="init">
         <taskdef
-                name="reladomo-gen"
+                name="reladomo-gen-complex-domain"
                 classname="com.gs.fw.common.mithra.generator.MithraGenerator"
                 loaderref="reladomoGenerator">
             <classpath refid="reladomogen.classpath"/>
         </taskdef>
 
-        <reladomo-gen
+        <reladomo-gen-complex-domain
                 xml="${complex.domain.xml.dir}/ReladomoTestAppClassList.xml"
                 generatedDir="${generated.src.dir}"
                 nonGeneratedDir="${complex.domain.main.src.dir}"
                 generateConcreteClasses="${generateConcreteClasses}"
                 generateGscListMethod="true">
-        </reladomo-gen>
+        </reladomo-gen-complex-domain>
     </target>
 
-    <target name="generate-reladomo-ddl">
-        <taskdef name="reladomo-gen-ddl"
+    <target name="generate-reladomo-complex-domain-ddl">
+        <taskdef name="reladomo-gen-complex-domain-ddl"
                  classname="com.gs.fw.common.mithra.generator.dbgenerator.MithraDbDefinitionGenerator">
             <classpath refid="reladomogen.classpath"/>
         </taskdef>
-        <reladomo-gen-ddl
+        <reladomo-gen-complex-domain-ddl
                 xml="${complex.domain.xml.dir}/ReladomoTestAppClassList.xml"
                 generatedDir="${generated.ddl.dir}"
                 databaseType="udb82"/>
     </target>
 
-    <target name="generate-reladomo-graphml">
-        <taskdef name="reladomo-gen-graph"
+    <target name="generate-reladomo-complex-domain-graphml">
+        <taskdef name="reladomo-gen-complex-domain-graph"
                  classname="com.gs.fw.common.mithra.generator.MithraGraphGenerator">
             <classpath refid="reladomogen.classpath"/>
         </taskdef>
-        <reladomo-gen-graph
+        <reladomo-gen-complex-domain-graph
                 xml="${complex.domain.xml.dir}/ReladomoTestAppClassList.xml"
                 showattributes="all"
                 outputfile="${generated.graph.dir}/model.graphml"/>
@@ -100,7 +100,7 @@
         </copy>
     </target>
 
-    <target name="compile-all" depends="generate-reladomo-classes">
+    <target name="compile-all" depends="generate-reladomo-complex-domain-classes">
         <javac destdir="${main.classes.dir}"
                debug="true"
                source="1.8"
