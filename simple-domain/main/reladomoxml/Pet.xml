@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+
+    <PackageName>example.simple.domain</PackageName>
+    <ClassName>Pet</ClassName>
+    <DefaultTable>PET</DefaultTable>
+
+    <AsOfAttribute name="processingDate"
+                   fromColumnName="IN_Z"
+                   toColumnName="OUT_Z"
+                   toIsInclusive="false"
+                   isProcessingDate="true"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+    />
+
+    <Attribute name="petName" javaType="String" columnName="PET_NAME" primaryKey="true" maxLength="16"/>
+    <Attribute name="personId" javaType="int" columnName="PERSON_ID" nullable="false"/>
+    <Attribute name="petAge" javaType="int" columnName="PET_AGE" nullable="false"/>
+    <Attribute name="petTypeId" javaType="int" columnName="PET_TYPE_ID" nullable="false"/>
+
+    <Relationship name="petType"
+                  relatedObject="PetType"
+                  cardinality="many-to-one">
+        this.petTypeId = PetType.petTypeId
+    </Relationship>
+
+</MithraObject>

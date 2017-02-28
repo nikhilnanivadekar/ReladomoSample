@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+
+    <PackageName>example.simple.domain</PackageName>
+    <ClassName>PetType</ClassName>
+    <DefaultTable>PET_TYPE</DefaultTable>
+
+    <Attribute name="petTypeId" javaType="int" columnName="PET_TYPE_ID" primaryKey="true"/>
+    <Attribute name="petType" javaType="String" columnName="PET_TYPE" nullable="false" maxLength="16"/>
+
+</MithraObject>

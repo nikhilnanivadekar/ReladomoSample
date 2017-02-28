@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Mithra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+    <MithraObjectResource name="ObjectSequence"/>
+    <MithraObjectResource name="Person"/>
+    <MithraObjectResource name="Pet"/>
+    <MithraObjectResource name="PetType"/>
+</Mithra>
