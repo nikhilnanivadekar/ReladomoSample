@@ -1,4 +1,4 @@
-package example.domain;
+package example.complex.domain;
 
 import java.sql.Timestamp;
 

@@ -1,19 +1,19 @@
-package example.domain;
+package example.complex.domain;
 
 import com.gs.fw.common.mithra.util.DefaultInfinityTimestamp;
 
 import java.sql.Timestamp;
 
-public class Account extends AccountAbstract
+public class Product extends ProductAbstract
 {
-    public Account(Timestamp processingDate)
+    public Product(Timestamp processingDate)
     {
         super(processingDate);
         // You must not modify this constructor. Mithra calls this internally.
         // You can call this constructor. You can also add new constructors.
     }
 
-    public Account()
+    public Product()
     {
         this(DefaultInfinityTimestamp.getDefaultInfinity());
     }

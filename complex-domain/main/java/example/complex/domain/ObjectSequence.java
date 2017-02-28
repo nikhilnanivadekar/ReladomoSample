@@ -1,4 +1,4 @@
-package example.domain;
+package example.complex.domain;
 
 import com.gs.fw.common.mithra.MithraSequence;
 

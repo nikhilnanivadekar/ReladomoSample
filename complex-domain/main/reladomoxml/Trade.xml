@@ -4,7 +4,7 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
 
-    <PackageName>example.domain</PackageName>
+    <PackageName>example.complex.domain</PackageName>
     <ClassName>Trade</ClassName>
     <DefaultTable>TRADE</DefaultTable>
     <SourceAttribute name="exchange" javaType="String"/>
