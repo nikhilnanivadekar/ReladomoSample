@@ -26,15 +26,17 @@
                            incrementSize="1"/>
     </Attribute>
 
-    <Attribute name="cusip" javaType="String" columnName="CUSIP" maxLength="25" nullable="false"/>
-    <Attribute name="productTicker" javaType="String" columnName="PRODUCT_TICKER" maxLength="25" nullable="false"/>
     <Attribute name="productName" javaType="String" columnName="PRODUCT_NAME" maxLength="255" nullable="false"/>
+    <Attribute name="maturityDate" javaType="Date" columnName="MATURITY_DATE"/>
+    <Attribute name="exchange" javaType="String" columnName="EXCHANGE"/>
+    <Attribute name="issuerId" javaType="int" columnName="ISSUER_ID"/>
+    <Attribute name="settlementCurrency" javaType="String" maxLength="3" columnName="SETTLE_CCY"/>
 
     <Relationship name="synonyms" relatedObject="ProductSynonym" cardinality="one-to-many">
         this.productId = ProductSynonym.productId
     </Relationship>
 
-    <Relationship name="cusOrFooSynonyms" relatedObject="ProductSynonym" cardinality="one-to-one">
+    <Relationship name="cusOrFooSynonyms" relatedObject="ProductSynonym" cardinality="one-to-many">
         this.productId = ProductSynonym.productId and ProductSynonym.synonymType in ("CUS", "FOO")
     </Relationship>
 

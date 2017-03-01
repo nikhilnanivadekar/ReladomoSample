@@ -51,4 +51,9 @@
         this.acctId = Account.acctId
     </Relationship>
 
+    <Relationship name="quantityBalance" relatedObject="Balance" cardinality="many-to-one">
+        this.acctId = Balance.acctId and this.productId = Balance.productId
+        and Balance.balanceType = {Balance.QUANTITY_TYPE}
+    </Relationship>
+
 </MithraObject>

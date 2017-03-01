@@ -29,5 +29,5 @@
     <Attribute name="acctNum" javaType="String" columnName="ACCT_NUM" maxLength="9" nullable="false"/>
     <Attribute name="firstName" javaType="String" columnName="FIRST_NAME" maxLength="255" nullable="false"/>
     <Attribute name="lastName" javaType="String" columnName="LAST_NAME" maxLength="255" nullable="false"/>
-    <Attribute name="city" javaType="String" columnName="CITY" maxLength="24"/>
+    <Attribute name="location" javaType="String" columnName="CITY" maxLength="24"/>
 </MithraObject>

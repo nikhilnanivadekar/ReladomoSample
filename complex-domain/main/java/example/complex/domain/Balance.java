@@ -4,6 +4,9 @@ import java.sql.Timestamp;
 
 public class Balance extends BalanceAbstract
 {
+
+    public static final int QUANTITY_TYPE = 100;
+
     public Balance(Timestamp businessDate, Timestamp processingDate)
     {
         super(businessDate, processingDate);

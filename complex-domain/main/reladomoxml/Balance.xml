@@ -26,10 +26,8 @@
 
     <Attribute name="acctId" javaType="int" columnName="ACCT_ID" nullable="false" primaryKey="true"/>
     <Attribute name="productId" javaType="int" columnName="PRODUCT_ID" nullable="false" primaryKey="true"/>
-    <Attribute name="balanceType" javaType="String" maxLength="64" columnName="BALANCE_TYPE" nullable="false"
+    <Attribute name="balanceType" javaType="int" columnName="BALANCE_TYPE" nullable="false"
                primaryKey="true">
-        <Property key="&quot;enumType&quot;"
-                  value="&quot;example.complex.domain.BalanceType:Daily|Weekly|Monthly|Yearly|Closing&quot;"/>
     </Attribute>
     <Attribute name="value" javaType="double" columnName="VALUE" nullable="false"/>
 
