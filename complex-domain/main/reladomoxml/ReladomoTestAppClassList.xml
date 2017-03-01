@@ -2,6 +2,7 @@
 
 <Mithra>
     <MithraObjectResource name="Account"/>
+    <MithraObjectResource name="Balance"/>
     <MithraObjectResource name="ObjectSequence"/>
     <MithraObjectResource name="Product"/>
     <MithraObjectResource name="ProductSynonym"/>

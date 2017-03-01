@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraObject objectType="transactional"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="reladomoobject.xsd">
+
+    <PackageName>example.complex.domain</PackageName>
+    <ClassName>Balance</ClassName>
+    <DefaultTable>BALANCE</DefaultTable>
+    <SourceAttribute name="exchange" javaType="String"/>
+
+    <AsOfAttribute name="businessDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="false"
+                   fromColumnName="FROM_Z"
+                   toColumnName="THRU_Z"/>
+    <AsOfAttribute name="processingDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="true"
+                   fromColumnName="IN_Z"
+                   toColumnName="OUT_Z"/>
+
+    <Attribute name="acctId" javaType="int" columnName="ACCT_ID" nullable="false" primaryKey="true"/>
+    <Attribute name="productId" javaType="int" columnName="PRODUCT_ID" nullable="false" primaryKey="true"/>
+    <Attribute name="balanceType" javaType="String" maxLength="64" columnName="BALANCE_TYPE" nullable="false"
+               primaryKey="true">
+        <Property key="&quot;enumType&quot;"
+                  value="&quot;example.complex.domain.BalanceType:Daily|Weekly|Monthly|Yearly|Closing&quot;"/>
+    </Attribute>
+    <Attribute name="value" javaType="double" columnName="VALUE" nullable="false"/>
+
+    <Relationship name="product" relatedObject="Product" cardinality="many-to-one"
+                  reverseRelationshipName="balancesByProduct">
+        this.productId = Product.productId
+    </Relationship>
+
+    <Relationship name="account" relatedObject="Account" cardinality="many-to-one"
+                  reverseRelationshipName="balancesByAccount">
+        this.acctId = Account.acctId
+    </Relationship>
+
+</MithraObject>
