@@ -11,7 +11,7 @@
     <Attribute name="personId" javaType="int" columnName="PERSON_ID" primaryKey="true"
                primaryKeyGeneratorStrategy="SimulatedSequence">
         <SimulatedSequence sequenceName="Person"
-                           sequenceObjectFactoryName="kata.util.ObjectSequenceObjectFactory"
+                           sequenceObjectFactoryName="example.simple.util.ObjectSequenceObjectFactory"
                            hasSourceAttribute="false"
                            batchSize="10"
                            initialValue="1"
