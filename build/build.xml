@@ -2,6 +2,7 @@
 
     <property name="complex.domain.main.src.dir" value="${basedir}/complex-domain/main/java"/>
     <property name="complex.domain.test.src.dir" value="${basedir}/complex-domain/test/java"/>
+    <property name="complex.domain.test.resource.dir" value="${basedir}/complex-domain/test/resources"/>
     <property name="simple.domain.main.src.dir" value="${basedir}/simple-domain/main/java"/>
     <property name="simple.domain.test.src.dir" value="${basedir}/simple-domain/test/java"/>
     <property name="simple.domain.test.resource.dir" value="${basedir}/simple-domain/test/resources"/>
@@ -143,7 +144,13 @@
         </copy>
     </target>
 
-    <target name="compile-all" depends="generate-reladomo-complex-domain-classes, generate-reladomo-simple-domain-classes">
+    <target name="compile-all"
+            depends="generate-reladomo-complex-domain-classes, generate-reladomo-simple-domain-classes">
+        <copy todir="${test.classes.dir}/example/complex">
+            <fileset dir="${complex.domain.test.resource.dir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
         <copy todir="${test.classes.dir}/example/simple">
             <fileset dir="${simple.domain.test.resource.dir}">
                 <exclude name="**/*.java"/>
