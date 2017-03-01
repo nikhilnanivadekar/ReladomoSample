@@ -19,7 +19,7 @@
     <Attribute name="productId" javaType="int" columnName="PRODUCT_ID" primaryKey="true"
                primaryKeyGeneratorStrategy="SimulatedSequence">
         <SimulatedSequence sequenceName="Product"
-                           sequenceObjectFactoryName="sample.util.ObjectSequenceObjectFactory"
+                           sequenceObjectFactoryName="example.complex.util.ObjectSequenceObjectFactory"
                            hasSourceAttribute="false"
                            batchSize="10"
                            initialValue="1"

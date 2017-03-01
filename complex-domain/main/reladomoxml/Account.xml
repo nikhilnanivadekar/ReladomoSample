@@ -19,7 +19,7 @@
     <Attribute name="acctId" javaType="int" columnName="ACCT_ID" primaryKey="true"
                primaryKeyGeneratorStrategy="SimulatedSequence">
         <SimulatedSequence sequenceName="Account"
-                           sequenceObjectFactoryName="sample.util.ObjectSequenceObjectFactory"
+                           sequenceObjectFactoryName="example.complex.util.ObjectSequenceObjectFactory"
                            hasSourceAttribute="false"
                            batchSize="10"
                            initialValue="1"
