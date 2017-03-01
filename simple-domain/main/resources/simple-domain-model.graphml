@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns/graphml" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns/graphml http://www.yworks.com/xml/schema/graphml/1.0/ygraphml.xsd">
+<key id="d0" for="node" yfiles.type="nodegraphics"/>
+<key id="d2" for="edge" yfiles.type="edgegraphics"/>
+<graph id="G" edgedefault="directed">
+    <node id="ObjectSequence">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="245" height="90"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+ObjectSequence
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+simulatedSequenceName : [PK] String
+nextValue : long
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="Person">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="133" height="105"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+Person
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+personId : [PK] int
+firstName : String
+lastName : String
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="Pet">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="273" height="165"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+Pet
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+processingDate : [Processing] Timestamp
+petName : [PK] String
+personId : int
+petAge : int
+petTypeId : int
+processingDateFrom : Timestamp
+processingDateTo : Timestamp
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="PetType">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="140" height="90"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+PetType
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+petTypeId : [PK] int
+petType : String
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+<edge id="e0" source="Person" target="Pet">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="standard" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" distance="2.0" ratio="0.7">pets</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e1" source="Pet" target="PetType">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="none" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+</graph>
+</graphml>

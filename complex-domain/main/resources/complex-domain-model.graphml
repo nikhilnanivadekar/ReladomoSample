@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns/graphml" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns/graphml http://www.yworks.com/xml/schema/graphml/1.0/ygraphml.xsd">
+<key id="d0" for="node" yfiles.type="nodegraphics"/>
+<key id="d2" for="edge" yfiles.type="edgegraphics"/>
+<graph id="G" edgedefault="directed">
+    <node id="Account">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="273" height="180"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+Account
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+processingDate : [Processing] Timestamp
+acctId : [PK] int
+acctNum : String
+firstName : String
+lastName : String
+city : String
+processingDateFrom : Timestamp
+processingDateTo : Timestamp
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="Trade">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="273" height="285"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+Trade
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+exchange : [Source] String
+businessDate : [Business] Timestamp
+processingDate : [Processing] Timestamp
+tradeId : [PK] int
+tradeRef : String
+orderType : String
+acctId : int
+productId : int
+unitPrice : double
+quantity : double
+tradeCurrency : String
+businessDateFrom : Timestamp
+businessDateTo : Timestamp
+processingDateFrom : Timestamp
+processingDateTo : Timestamp
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="ObjectSequence">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="245" height="90"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+ObjectSequence
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+simulatedSequenceName : [PK] String
+nextValue : long
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="Product">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="273" height="165"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+Product
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+processingDate : [Processing] Timestamp
+productId : [PK] int
+cusip : String
+productTicker : String
+productName : String
+processingDateFrom : Timestamp
+processingDateTo : Timestamp
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="ProductSynonym">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="175" height="105"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+ProductSynonym
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+productId : [PK] int
+synonymType : [PK] String
+synonymValue : String
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="Balance">
+      <data key="d0" >
+        <y:UMLClassNode >
+          <y:Geometry  x="218.5" y="205.0" width="273" height="225"/>
+          <y:Fill color="#FFCC00"  transparent="false"/>
+          <y:BorderStyle type="line" width="1.0" color="#000000" />
+          <y:NodeLabel x="23.0" y="3.0" width="68.0" height="19.92626953125" visible="true" alignment="center" fontFamily="Dialog" fontSize="13" fontStyle="bold" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" autoSizePolicy="content">
+Balance
+</y:NodeLabel>
+          <y:UML clipContent="true" omitDetails="false" use3DEffect="true" stereotype="" constraint="">
+            <y:AttributeLabel>
+exchange : [Source] String
+businessDate : [Business] Timestamp
+processingDate : [Processing] Timestamp
+acctId : [PK] int
+productId : [PK] int
+balanceType : [PK] String
+value : double
+businessDateFrom : Timestamp
+businessDateTo : Timestamp
+processingDateFrom : Timestamp
+processingDateTo : Timestamp
+</y:AttributeLabel>
+            <y:MethodLabel></y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+<edge id="e0" source="Trade" target="Trade">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="none" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" distance="2.0" ratio="0.7">tradesByTradeRef</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e1" source="Balance" target="Product">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="standard" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e2" source="Trade" target="Account">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="standard" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e3" source="Product" target="ProductSynonym">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="none" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" distance="2.0" ratio="0.7">synonyms</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e4" source="Product" target="ProductSynonym">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="none" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e5" source="Product" target="ProductSynonym">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="none" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e6" source="Product" target="ProductSynonym">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="none" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" distance="2.0" ratio="0.7">synonymByTypes</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e7" source="Product" target="ProductSynonym">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="none" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e8" source="Balance" target="Account">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="standard" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+<edge id="e9" source="Trade" target="Product">
+<data key="d2" >
+        <y:PolyLineEdge >
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle type="line" width="1.0" color="#000000" />
+          <y:Arrows source="standard" target="standard"/>
+
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">1</y:EdgeLabel>
+          <y:EdgeLabel x="0" y="0" width="35.0" height="18.701171875" visible="true" alignment="center" fontFamily="Dialog" fontSize="12" fontStyle="plain" textColor="#000000" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" distance="2.0" ratio="0.5">*</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data></edge>
+</graph>
+</graphml>
