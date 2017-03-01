@@ -1,1 +1,5 @@
+.idea/copyright/**
+.idea/libraries/**
+.idea/uiDesigner.xml
+.idea/workspace.xml
 target/**
