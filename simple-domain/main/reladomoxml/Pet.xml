@@ -8,15 +8,6 @@
     <ClassName>Pet</ClassName>
     <DefaultTable>PET</DefaultTable>
 
-    <AsOfAttribute name="processingDate"
-                   fromColumnName="IN_Z"
-                   toColumnName="OUT_Z"
-                   toIsInclusive="false"
-                   isProcessingDate="true"
-                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
-                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
-    />
-
     <Attribute name="petName" javaType="String" columnName="PET_NAME" primaryKey="true" maxLength="16"/>
     <Attribute name="personId" javaType="int" columnName="PERSON_ID" nullable="false"/>
     <Attribute name="petAge" javaType="int" columnName="PET_AGE" nullable="false"/>
