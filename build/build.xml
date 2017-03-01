@@ -4,6 +4,7 @@
     <property name="complex.domain.test.src.dir" value="${basedir}/complex-domain/test/java"/>
     <property name="simple.domain.main.src.dir" value="${basedir}/simple-domain/main/java"/>
     <property name="simple.domain.test.src.dir" value="${basedir}/simple-domain/test/java"/>
+    <property name="simple.domain.test.resource.dir" value="${basedir}/simple-domain/test/resources"/>
     <property name="main.classes.dir" location="${basedir}/target/classes"/>
     <property name="test.classes.dir" location="${basedir}/target/testclasses"/>
     <property name="generated.src.dir" location="${basedir}/target/java/generatedsrc"/>
@@ -143,6 +144,11 @@
     </target>
 
     <target name="compile-all" depends="generate-reladomo-complex-domain-classes, generate-reladomo-simple-domain-classes">
+        <copy todir="${test.classes.dir}/example/simple">
+            <fileset dir="${simple.domain.test.resource.dir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
         <javac destdir="${main.classes.dir}"
                debug="true"
                source="1.8"
@@ -155,7 +161,7 @@
                 <path refid="reladomo.buildtime.classpath"/>
             </classpath>
         </javac>
-        <javac destdir="${complex.domain.test.src.dir}"
+        <javac destdir="${test.classes.dir}"
                debug="true"
                source="1.8"
                target="1.8"
@@ -167,7 +173,7 @@
                 <path refid="reladomo.testtime.classpath"/>
             </classpath>
         </javac>
-        <javac destdir="${simple.domain.test.src.dir}"
+        <javac destdir="${test.classes.dir}"
                debug="true"
                source="1.8"
                target="1.8"
