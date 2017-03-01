@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<MithraRuntime
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="reladomoruntime.xsd">
+    <ConnectionManager className="com.gs.fw.common.mithra.test.ConnectionManagerForTests">
+        <Property name="resourceName" value="simple_domain_db"/>
+        <MithraObjectConfiguration cacheType="none" className="example.simple.domain.ObjectSequence"/>
+        <MithraObjectConfiguration cacheType="partial" className="example.simple.domain.Person"/>
+        <MithraObjectConfiguration cacheType="partial" className="example.simple.domain.Pet"/>
+        <MithraObjectConfiguration cacheType="partial" className="example.simple.domain.PetType"/>
+    </ConnectionManager>
+</MithraRuntime>
