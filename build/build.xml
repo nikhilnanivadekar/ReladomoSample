@@ -94,7 +94,7 @@
         <reladomo-gen-complex-domain-graph
                 xml="${complex.domain.xml.dir}/ReladomoTestAppClassList.xml"
                 showattributes="all"
-                outputfile="${generated.graph.dir}/model.graphml"/>
+                outputfile="${generated.graph.dir}/complex-domain-model.graphml"/>
     </target>
 
     <target name="generate-reladomo-simple-domain-classes" depends="init">
@@ -133,7 +133,7 @@
         <reladomo-gen-simple-domain-graph
                 xml="${simple.domain.xml.dir}/ReladomoTestAppClassList.xml"
                 showattributes="all"
-                outputfile="${generated.graph.dir}/model.graphml"/>
+                outputfile="${generated.graph.dir}/simple-domain-model.graphml"/>
     </target>
 
     <target name="copy-libs">
