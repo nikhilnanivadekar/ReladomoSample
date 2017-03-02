@@ -95,7 +95,7 @@
         </taskdef>
         <reladomo-gen-complex-domain-graph
                 xml="${complex.domain.xml.dir}/ReladomoTestAppClassList.xml"
-                showattributes="all"
+                showattributes="none"
                 outputfile="${generated.graph.dir}/complex-domain-model.graphml"/>
     </target>
 
@@ -134,7 +134,7 @@
         </taskdef>
         <reladomo-gen-simple-domain-graph
                 xml="${simple.domain.xml.dir}/ReladomoTestAppClassList.xml"
-                showattributes="all"
+                showattributes="none"
                 outputfile="${generated.graph.dir}/simple-domain-model.graphml"/>
     </target>
 
