@@ -54,4 +54,12 @@
         this.productId = ProductSynonym.productId and ProductSynonym.synonymType = "CUS"
     </Relationship>
 
+    <Relationship name="trades" relatedObject="Trade" cardinality="one-to-many" parameters="Set&lt;String&gt; desks">
+        this.productId = Trade.productId and Trade.desk in {desks}
+    </Relationship>
+
+    <Relationship name="balances" relatedObject="Balance" cardinality="one-to-many" parameters="Set&lt;String&gt; desks">
+        this.productId = Balance.productId and Balance.desk in {desks}
+    </Relationship>
+
 </MithraObject>

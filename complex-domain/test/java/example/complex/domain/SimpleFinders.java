@@ -16,9 +16,9 @@ public class SimpleFinders extends AbstractReladomoTest
     @Test
     public void findTrade()
     {
-        Balance balanceA = BalanceFinder.findOne(BalanceFinder.acctId().eq(1).and(BalanceFinder.exchange().eq("DeskA")));
+        Balance balanceA = BalanceFinder.findOne(BalanceFinder.acctId().eq(1).and(BalanceFinder.desk().eq("DeskA")));
         Assert.assertEquals(10.01, balanceA.getValue(), 0.00);
-        Balance balanceB = BalanceFinder.findOne(BalanceFinder.acctId().eq(1).and(BalanceFinder.exchange().eq("DeskB")));
+        Balance balanceB = BalanceFinder.findOne(BalanceFinder.acctId().eq(1).and(BalanceFinder.desk().eq("DeskB")));
         Assert.assertEquals(20.01, balanceB.getValue(), 0.00);
     }
 }

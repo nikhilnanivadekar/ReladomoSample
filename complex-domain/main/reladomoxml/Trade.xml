@@ -7,7 +7,7 @@
     <PackageName>example.complex.domain</PackageName>
     <ClassName>Trade</ClassName>
     <DefaultTable>TRADE</DefaultTable>
-    <SourceAttribute name="exchange" javaType="String"/>
+    <SourceAttribute name="desk" javaType="String"/>
 
     <AsOfAttribute name="businessDate"
                    toIsInclusive="false"
@@ -41,13 +41,11 @@
         this.orderType = Trade.orderType
     </Relationship>
 
-    <Relationship name="product" relatedObject="Product" cardinality="many-to-one"
-                  reverseRelationshipName="tradesByProduct">
+    <Relationship name="product" relatedObject="Product" cardinality="many-to-one">
         this.productId = Product.productId
     </Relationship>
 
-    <Relationship name="account" relatedObject="Account" cardinality="many-to-one"
-                  reverseRelationshipName="tradesByAccount">
+    <Relationship name="account" relatedObject="Account" cardinality="many-to-one">
         this.acctId = Account.acctId
     </Relationship>
 

@@ -30,4 +30,14 @@
     <Attribute name="firstName" javaType="String" columnName="FIRST_NAME" maxLength="255" nullable="false"/>
     <Attribute name="lastName" javaType="String" columnName="LAST_NAME" maxLength="255" nullable="false"/>
     <Attribute name="location" javaType="String" columnName="CITY" maxLength="24"/>
+
+    <Relationship name="trades" relatedObject="Trade" cardinality="one-to-many" parameters="Set&lt;String&gt; desks">
+        this.acctId = Trade.acctId and Trade.desk in {desks}
+    </Relationship>
+    
+    <Relationship name="balances" relatedObject="Balance" cardinality="one-to-many" parameters="Set&lt;String&gt; desks">
+        this.acctId = Balance.acctId and Balance.desk in {desks}
+    </Relationship>
+    
+    
 </MithraObject>
