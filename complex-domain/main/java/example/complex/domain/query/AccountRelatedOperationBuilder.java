@@ -32,7 +32,7 @@ public class AccountRelatedOperationBuilder
         {
             location = "LDN";
         }
-        current = current.and(AccountFinder.location().eq(location));
+        current = current.and(accountFinder.location().eq(location));
     }
 
     public Operation getOperation()

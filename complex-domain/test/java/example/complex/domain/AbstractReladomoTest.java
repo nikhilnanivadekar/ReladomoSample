@@ -27,14 +27,16 @@ public class AbstractReladomoTest
     @Before
     public void setUp() throws Exception
     {
-        ConnectionManagerForTests shardedConnectionManager = ConnectionManagerForTests.getInstanceForDbName("complex_domain_db_sharded");
         this.mithraTestResource = new MithraTestResource(this.getMithraConfigXmlFilename());
+
+        final ConnectionManagerForTests nonShardedconnectionManager = ConnectionManagerForTests.getInstance("complex_domain_db_non_sharded");
+        this.mithraTestResource.createSingleDatabase(nonShardedconnectionManager);
+        this.mithraTestResource.addTestDataToDatabase("example/complex/testdata/data_AllTypes_NonSharded.txt", nonShardedconnectionManager);
+
+        ConnectionManagerForTests shardedConnectionManager = ConnectionManagerForTests.getInstance("complex_domain_db_sharded");
         this.createDatabaseForSource(shardedConnectionManager, this.getTestDataFileNamesForDeskA(), "DeskA");
         this.createDatabaseForSource(shardedConnectionManager, this.getTestDataFileNamesForDeskB(), "DeskB");
 
-        final ConnectionManagerForTests nonShardedconnectionManager = ConnectionManagerForTests.getInstanceForDbName("complex_domain_db_non_sharded");
-        this.mithraTestResource.createSingleDatabase(nonShardedconnectionManager);
-        this.mithraTestResource.addTestDataToDatabase("example/complex/testdata/data_AllTypes_NonSharded.txt", nonShardedconnectionManager);
 
         this.mithraTestResource.setUp();
     }

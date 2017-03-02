@@ -25,6 +25,16 @@ public class BalanceWindow
         return BalanceFinder.findMany(op);
     }
 
+    public BalanceList retrieveBalancesWithOr()
+    {
+        Operation op = BalanceFinder.businessDate().eq(readUserDate());
+        op = op.and(BalanceFinder.desk().in(readUserDesks()));
+        Operation refDataOp = accountComponent.getUserOperation(BalanceFinder.account());
+        refDataOp = refDataOp.or(productComponent.getUserOperation(BalanceFinder.product()));
+        op = op.and(refDataOp);
+        return BalanceFinder.findMany(op);
+    }
+
     private Set<String> readUserDesks()
     {
         //read it from the gui component. stubbed out for this example.

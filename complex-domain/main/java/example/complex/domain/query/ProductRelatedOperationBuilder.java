@@ -20,6 +20,7 @@ public class ProductRelatedOperationBuilder
 
     public ProductRelatedOperationBuilder(ProductFinder.ProductSingleFinderForRelatedClasses productFinder, Set<String> cusips)
     {
+        this.productFinder = productFinder;
         current = productFinder.cusipSynonym().synonymValue().in(cusips);
     }
 

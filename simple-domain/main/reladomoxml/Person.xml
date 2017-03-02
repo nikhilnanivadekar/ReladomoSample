@@ -20,11 +20,8 @@
     <Attribute name="firstName" javaType="String" columnName="FIRST_NAME" maxLength="16"/>
     <Attribute name="lastName" javaType="String" columnName="LAST_NAME" maxLength="24"/>
 
-    <Relationship name="pets"
-                  relatedObject="Pet"
-                  cardinality="one-to-many"
-                  relatedIsDependent="true"
-                  reverseRelationshipName="owner">
+    <Relationship name="pets" relatedObject="Pet" cardinality="one-to-many"
+                  relatedIsDependent="true" reverseRelationshipName="owner">
         this.personId = Pet.personId
     </Relationship>
 
