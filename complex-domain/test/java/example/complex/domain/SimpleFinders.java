@@ -26,6 +26,12 @@ public class SimpleFinders extends AbstractReladomoTest
     @Test
     public void testBalanceWindow()
     {
+        new BalanceWindow().retrieveBalances().forceResolve();
+    }
+
+    @Test
+    public void testBalanceWindowWithOr()
+    {
         new BalanceWindow().retrieveBalancesWithOr().forceResolve();
     }
 }

@@ -8,6 +8,21 @@
     <ClassName>ProductSynonym</ClassName>
     <DefaultTable>PRODUCT_SYNONYM</DefaultTable>
 
+    <AsOfAttribute name="businessDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="false"
+                   fromColumnName="FROM_Z"
+                   toColumnName="THRU_Z"/>
+    <AsOfAttribute name="processingDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="true"
+                   fromColumnName="IN_Z"
+                   toColumnName="OUT_Z"/>
+
     <Attribute name="productId" javaType="int" columnName="PRODUCT_ID" primaryKey="true"/>
     <Attribute name="synonymType" javaType="String" columnName="SYNONYM_TYPE" primaryKey="true"/>
     <Attribute name="synonymValue" javaType="String" columnName="SYNONYM_VAL"/>

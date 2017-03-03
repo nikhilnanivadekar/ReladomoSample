@@ -8,6 +8,13 @@
     <ClassName>Product</ClassName>
     <DefaultTable>PRODUCT</DefaultTable>
 
+    <AsOfAttribute name="businessDate"
+                   toIsInclusive="false"
+                   infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   defaultIfNotSpecified="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
+                   isProcessingDate="false"
+                   fromColumnName="FROM_Z"
+                   toColumnName="THRU_Z"/>
     <AsOfAttribute name="processingDate"
                    toIsInclusive="false"
                    infinityDate="[com.gs.fw.common.mithra.util.DefaultInfinityTimestamp.getDefaultInfinity()]"
