@@ -27,9 +27,7 @@ Complex domain consists of five objects `Account`, `Product`, `ProductSynonym`, 
 This helps us elaborate the support for only sharded domains, only non-sharded domains as well as a mix of sharded and non-sharded domains in Reladomo.
 
 - `ProductSynonym` is a non-temporal object.
-- `Account`, `Product` are uni-temporal objects. There exists only the `processingDate` dimension. 
-  * These objects are considered to capture reference data, hence are treated like a history book.
-- `Trade`, `Balance` are bi-temporal objects. There exists both `businessDate` and `processingDate` dimensions.
+- `Account`, `Balance`, `Product`, `Trade` are bi-temporal objects. There exists both `businessDate` and `processingDate` dimensions.
   * These objects are considered to capture a system's activity w.r.t. trades and balances. It is possible that we need to make an 'as-of' correction to the data. Hence, they are created as bi-temporal objects which will enable us to preserve history as well as edit it.
 This helps us demonstrate the out of box support for temporal objects available in Reladomo.
  
