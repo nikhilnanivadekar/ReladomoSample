@@ -9,7 +9,7 @@ public class SimpleFinders extends AbstractReladomoTest
     @Test
     public void findByName()
     {
-        Account account = AccountFinder.findOne(AccountFinder.acctId().eq(1));
+        Account account = AccountFinder.findOne(AccountFinder.acctId().eq(1).and(AccountFinder.desk().eq("DeskA")));
         Assert.assertEquals("Bob", account.getFirstName());
         Assert.assertEquals("Smith", account.getLastName());
     }

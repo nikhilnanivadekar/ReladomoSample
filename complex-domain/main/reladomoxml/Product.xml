@@ -7,6 +7,7 @@
     <PackageName>example.complex.domain</PackageName>
     <ClassName>Product</ClassName>
     <DefaultTable>PRODUCT</DefaultTable>
+    <SourceAttribute name="desk" javaType="String"/>
 
     <AsOfAttribute name="businessDate"
                    toIsInclusive="false"
@@ -27,7 +28,7 @@
                primaryKeyGeneratorStrategy="SimulatedSequence">
         <SimulatedSequence sequenceName="Product"
                            sequenceObjectFactoryName="example.complex.util.ObjectSequenceObjectFactory"
-                           hasSourceAttribute="false"
+                           hasSourceAttribute="true"
                            batchSize="10"
                            initialValue="1"
                            incrementSize="1"/>

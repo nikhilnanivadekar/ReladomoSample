@@ -1,3 +1,11 @@
 class example.complex.domain.Balance
 acctId, productId, balanceType, value   , businessDateFrom       , businessDateTo         , processingDateFrom     , processingDateTo
 1       , 1      , 1          , 20.01   , "2014-03-31 23:59:00.0", "9999-12-01 23:59:00.0", "2014-03-31 23:59:00.0", "9999-12-01 23:59:00.0"
+
+class example.complex.domain.Account
+acctId  , acctNum, firstName, lastName   , location, processingDateFrom, processingDateTo, businessDateFrom, businessDateTo
+1       , "111"  , "Jake"   , "Snake"  , "USA"   , "2014-03-31 23:59:00.0", "9999-12-01 23:59:00.0", "2014-03-31 23:59:00.0", "9999-12-01 23:59:00.0"
+
+class example.complex.domain.Product
+productId, productName, maturityDate , exchange, issuerId, settlementCurrency, processingDateFrom, processingDateTo, businessDateFrom, businessDateTo
+1        , "CC"       , "2030-11-08" , "GHI"   , 2       , "EUR"             , "2016-08-31 23:59:00.0", "9999-12-01 23:59:00.0" , "2016-08-31 23:59:00.0", "9999-12-01 23:59:00.0"

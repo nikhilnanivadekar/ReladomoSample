@@ -147,15 +147,12 @@
     <target name="compile-all"
             depends="generate-reladomo-complex-domain-classes, generate-reladomo-simple-domain-classes">
         <copy todir="${test.classes.dir}/example/complex">
-            <fileset dir="${complex.domain.test.resource.dir}">
-                <exclude name="**/*.java"/>
-            </fileset>
+            <fileset dir="${complex.domain.test.resource.dir}"/>
         </copy>
         <copy todir="${test.classes.dir}/example/simple">
-            <fileset dir="${simple.domain.test.resource.dir}">
-                <exclude name="**/*.java"/>
-            </fileset>
+            <fileset dir="${simple.domain.test.resource.dir}"/>
         </copy>
+        <copy file="${complex.domain.test.resource.dir}/logback.xml" tofile="${test.classes.dir}/logback.xml"/>
         <javac destdir="${main.classes.dir}"
                debug="true"
                source="1.8"

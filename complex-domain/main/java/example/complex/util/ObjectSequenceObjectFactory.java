@@ -10,7 +10,7 @@ public class ObjectSequenceObjectFactory
 {
     public MithraSequence getMithraSequenceObject(String sequenceName, Object sourceAttribute, int initialValue)
     {
-        ObjectSequence objectSequence = ObjectSequenceFinder.findByPrimaryKey(sequenceName);
+        ObjectSequence objectSequence = ObjectSequenceFinder.findByPrimaryKey(sequenceName, (String) sourceAttribute);
         if (objectSequence == null)
         {
             objectSequence = new ObjectSequence();

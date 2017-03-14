@@ -7,6 +7,7 @@
     <PackageName>example.complex.domain</PackageName>
     <ClassName>ProductSynonym</ClassName>
     <DefaultTable>PRODUCT_SYNONYM</DefaultTable>
+    <SourceAttribute name="desk" javaType="String"/>
 
     <AsOfAttribute name="businessDate"
                    toIsInclusive="false"
