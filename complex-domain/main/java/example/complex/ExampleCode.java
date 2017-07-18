@@ -5,8 +5,8 @@ import com.gs.fw.common.mithra.finder.Operation;
 import example.complex.domain.TradeFinder;
 import example.complex.domain.TradeList;
 import example.complex.gui.BalanceWindow;
-import example.simple.domain.Person;
-import example.simple.domain.PersonFinder;
+// import example.simple.domain.Person;
+// import example.simple.domain.PersonFinder;
 
 import java.util.Set;
 
@@ -15,11 +15,12 @@ public class ExampleCode
 {
     public void codeSnippets()
     {
+        /**
         Person john = PersonFinder.findOne(PersonFinder.personId().eq(102));
         john.getFirstName();
         PersonFinder.firstName().toLowerCase().startsWith("j");
         PersonFinder.firstName().eq("John");
-
+        */
         new BalanceWindow().retrieveBalances();
         new BalanceWindow().retrieveBalancesWithOr();
 

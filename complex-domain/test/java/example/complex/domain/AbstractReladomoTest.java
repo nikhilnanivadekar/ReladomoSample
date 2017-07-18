@@ -11,17 +11,17 @@ public class AbstractReladomoTest
 
     protected String getMithraConfigXmlFilename()
     {
-        return "example/complex/testconfig/TestReladomoRuntimeConfig.xml";
+        return "testconfig/TestReladomoRuntimeConfig.xml";
     }
 
     protected String[] getTestDataFileNamesForDeskA()
     {
-        return new String[]{"example/complex/testdata/data_AllTypes_DeskA.txt"};
+        return new String[]{"testdata/data_AllTypes_DeskA.txt"};
     }
 
     protected String[] getTestDataFileNamesForDeskB()
     {
-        return new String[]{"example/complex/testdata/data_AllTypes_DeskB.txt"};
+        return new String[]{"testdata/data_AllTypes_DeskB.txt"};
     }
 
     @Before

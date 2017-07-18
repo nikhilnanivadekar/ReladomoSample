@@ -11,7 +11,7 @@ public class AbstractReladomoTest
 
     protected String getMithraConfigXmlFilename()
     {
-        return "example/simple/testconfig/TestReladomoRuntimeConfig.xml";
+        return "testconfig/TestReladomoRuntimeConfig.xml";
     }
 
     @Before
@@ -20,7 +20,7 @@ public class AbstractReladomoTest
         this.mithraTestResource = new MithraTestResource(this.getMithraConfigXmlFilename());
         final ConnectionManagerForTests connectionManager = ConnectionManagerForTests.getInstanceForDbName("simple_domain_db");
         this.mithraTestResource.createSingleDatabase(connectionManager);
-        this.mithraTestResource.addTestDataToDatabase("example/simple/testdata/data_AllTypes.txt", connectionManager);
+        this.mithraTestResource.addTestDataToDatabase("testdata/data_AllTypes.txt", connectionManager);
         this.mithraTestResource.setUp();
     }
 
